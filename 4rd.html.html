@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by KangEunHu (http://jsbin.com/fewufop/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by KangEunHu (http://jsbin.com/bakenep/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>KTV - 4세대 아이돌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fdfdfd;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .main-banner {
+      width: 90%;
+      max-width: 900px;
+      margin: 50px auto 30px;
+      text-align: center;
+    }
+
+    .main-banner img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .main-banner p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 0.95em;
+      color: #000;
+      background: linear-gradient(90deg, #a8ff00, #00ffaa);
+      padding: 12px;
+      box-sizing: border-box;
+      font-weight: bold;
+    }
+
+    .chart-title {
+      text-align: left;
+      font-size: 8.5em;
+      font-weight: bold;
+      background: linear-gradient(90deg, #a8ff00, #00ffaa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding-left: 5%;
+      width: 90%;
+      max-width: 900px;
+      margin: 80px auto 10px auto;
+    }
+
+    .graph-title {
+      text-align: left;
+      font-size: 2.8em;
+      font-weight: bold;
+      padding-left: 5%;
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+    }
+
+    .bar-container {
+      width: 90%;
+      max-width: 700px;
+      margin: 0 auto 80px;
+    }
+
+    .bar-label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .bar {
+      height: 30px;
+      background: linear-gradient(90deg, #a8ff00, #00ffaa);
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .image-section-title {
+      text-align: left;
+      font-size: 2.5em;
+      font-weight: bold;
+      padding-left: 5%;
+      width: 90%;
+      max-width: 900px;
+      margin: 60px auto 10px auto;
+      background: white;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .square-image-wrapper {
+      width: 90%;
+      max-width: 900px;
+      aspect-ratio: 1 / 1;
+      margin: 20px auto 60px;
+    }
+
+    .square-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: auto;
+      background-color: #111;
+      padding: 40px 30px;
+    }
+
+    .section h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #fff;
+      text-align: center;
+    }
+
+
+    .section-content {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    
+.section-content img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+    .section-text {
+      font-size: 0.95em;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .section-text p {
+      margin: 8px 0;
+    }
+
+    .album-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background-color: #000;
+      padding: 40px 20px;
+      color: #fff;
+    }
+
+    .album-card {
+      width: 300px;
+      background-color: #111;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      border: 1px solid #333;
+    }
+
+    .album-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .album-card .info {
+      padding: 15px;
+      font-size: 0.9em;
+    }
+
+    .album-card .info p {
+      margin: 6px 0;
+    }
+
+    .album-card a {
+      text-decoration: none;
+    }
+
+    .album-card button {
+      padding: 8px 16px;
+      background: linear-gradient(90deg, #a8ff00, #00ffaa);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0 15px 15px;
+      width: calc(100% - 30px);
+    }
+
+    .footer-banner {
+      text-align: center;
+      padding: 10px 0;
+      background: linear-gradient(90deg, #a8ff00, #00ffaa);
+      color: black;
+      font-weight: bold;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header>
+    <a href="https://output.jsbin.com/mavidev" target="_blank">
+      <img src="https://i.imgur.com/jbAfkpU.png" alt="헤더 이미지">
+    </a>
+  </header>
+
+  <!-- 메인 배너 -->
+  <div class="main-banner">
+    <img src="https://news.nateimg.co.kr/orgImg/yn/2024/05/21/202405210959354491_d.jpg" alt="뉴진스">
+    <p>Global Orientation - 다국적 멤버 구성, 영어·일본어 등 다국어 능력 강화</p>
+  </div>
+
+  <div class="main-banner">
+    <img src="https://image.blip.kr/v1/file/5d49558565c22416870257d8c656376a" alt="스트레이키즈">
+    <p>Strong Storytelling & Universe - 독자적인 세계관을 바탕으로 콘텐츠 확장</p>
+  </div>
+
+  <div class="main-banner">
+    <img src="https://image.yes24.com/goods/127048736/XL" alt="에스파">
+    <p>Merch & Collectible Culture - 포토카드, NFT 등 수집 중심 소비 패턴</p>
+  </div>
+
+  <!-- 차트 영역 -->
+  <div class="chart-title">GLOBAL<br> K-pop <br> STARS</div>
+  <div class="graph-title">2025 글로벌 인기 K-pop 아티스트 순위</div>
+  <div class="bar-container">
+    <div class="bar-label">BTS</div>
+    <div class="bar" style="width: 100%;"></div>
+    <div class="bar-label">Black Pink</div>
+    <div class="bar" style="width: 70%;"></div>
+    <div class="bar-label">Stray Kids</div>
+    <div class="bar" style="width: 60%;"></div>
+    <div class="bar-label">BABY MONSTER</div>
+    <div class="bar" style="width: 50%;"></div>
+    <div class="bar-label">New Jeans</div>
+    <div class="bar" style="width: 40%;"></div>
+    <div class="bar-label">Aespa</div>
+    <div class="bar" style="width: 35%;"></div>
+  </div>
+
+  <!-- ✅ 추가된 타이틀 + 이미지 -->
+  <div class="image-section-title">The Beginning of 4th Gen K-pop in 2022</div>
+  <div class="square-image-wrapper">
+    <img src="https://img.etnews.com/news/article/2022/11/23/article_23141859630249.jpg" alt="4세대 시작 이미지">
+  </div>
+
+  <!-- 소개 섹션 -->
+  <div class="section">
+    <h2>4세대 아이돌</h2>
+    <div class="section-content">
+      <img src="https://img.vogue.co.kr/vogue/2023/07/style_64ab7e8d97503-1280x720.jpeg" alt="썸네일">
+      <div class="section-text">
+        <p><strong>Digital Native</strong></p>
+        <p>SNS, 유튜브, 틱톡을 활용한 실시간 소통을 이용하기도 하고 챌린지를 제작해 숏폼을 통해 전 세계적으로 적극적인 홍보를 펼칩니다.</p>
+        <p><strong>Interactive Engagement</strong></p>
+        <p>팬 플랫폼(bubble, weverse, phoning) 등을 통해 아티스트와 팬 사이에서 일상 공유와 참여가 더욱 강화되었습니다.</p>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- 앨범 카드 -->
+  <div class="album-cards">
+    <!-- 앨범 카드 섹션 -->
+  <div class="album-cards">
+    <!-- 카드 1 -->
+    <div class="album-card">
+      <img src="https://contents.kyobobook.co.kr/sih/fit-in/640x0/music/large/4255/2552464.jpg" alt="New Jeans - Hype Boy">
+      <div class="info">
+        <p><strong>Artist:</strong> New Jeans</p>
+        <p><strong>Title:</strong> Hype boy</p>
+        <p><strong>Album Type:</strong> EP</p>
+        <p><strong>Genre:</strong> Future bass, synth-pop</p>
+        <p><strong>Release:</strong> July 23, 2022</p>
+      </div>
+      <a href="https://youtu.be/11cta61wi0g?si=BS_F2QpUkjtHeuYc" target="_blank">
+        <button>link in bio</button>
+      </a>
+    </div>
+
+    <!-- 카드 2 -->
+    <div class="album-card">
+      <img src="https://m.thejypshop.com/web/product/big/202305/3007ccfd321a48b1553b2cae41808ccc.jpg" alt="Stray Kids - 5 Stars">
+      <div class="info">
+        <p><strong>Artist:</strong> Stray Kids</p>
+        <p><strong>Title:</strong> 5-STAR</p>
+        <p><strong>Album Type:</strong> Full-length</p>
+        <p><strong>Genre:</strong> Hip hop, pop, electronica</p>
+        <p><strong>Release:</strong> June 2, 2023</p>
+      </div>
+      <a href="https://youtu.be/JsOOis4bBFg?si=x0Fd41HiyOKbvy_u" target="_blank">
+        <button>link in bio</button>
+      </a>
+    </div>
+
+    <!-- 카드 3 -->
+    <div class="album-card">
+      <img src="https://image.aladin.co.kr/product/35363/44/cover500/c442938926_1.jpg" alt="AESPA - Whiplash">
+      <div class="info">
+        <p><strong>Artist:</strong> Aespa</p>
+        <p><strong>Title:</strong> Whiplash</p>
+        <p><strong>Album Type:</strong> EP</p>
+        <p><strong>Genre:</strong> EDM, house, hip-hop</p>
+        <p><strong>Release:</strong> October 21, 2024</p>
+      </div>
+      <a href="https://youtu.be/jWQx2f-CErU?si=LVPbkxDv656fSHJm" target="_blank">
+        <button>link in bio</button>
+      </a>
+    </div>
+  </div>
+  </div>
+  <!-- 푸터 -->
+  <div class="footer-banner">
+    KTV EVERYWHERE ALL AROUND THE WORLD
+  </div>
+
+</body>
+</html>
